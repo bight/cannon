@@ -1,0 +1,17 @@
+{
+    "name": "bight/packetboat",
+    "description": "A service-agnostic vehicle for WordPress transactional email.",
+    "type": "wordpress-plugin",
+    "require": {
+        "mailgun/mailgun-php": "^2.1",
+        "sendgrid/sendgrid": "^5.0",
+        "wildbit/postmark-php": "^2.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ned Zimmerman",
+            "email": "ned@bight.ca"
+        }
+    ]
+}

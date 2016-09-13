@@ -1,3 +1,3 @@
-# Cannon
+# Packet Boat
 
-A straightforward Mailgun implementation for WordPress transactional email.
+A service-agnostic vehicle for WordPress transactional email (currently supports Mailgun, Postmark and Sendgrid).
