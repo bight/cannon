@@ -1,0 +1,1 @@
+<?php namespace PacketBoat\Mailgun;
