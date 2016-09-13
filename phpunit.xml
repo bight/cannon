@@ -14,6 +14,9 @@
 	<filter>
 		<whitelist>
 			<directory suffix=".php">./includes</directory>
+			<exclude>
+				<directory suffix=".php">./tests</directory>
+			</exclude>
 		</whitelist>
 	</filter>
 </phpunit>
