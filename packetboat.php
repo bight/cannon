@@ -11,3 +11,5 @@
  *
  * @package         PacketBoat
  */
+
+namespace PacketBoat;
