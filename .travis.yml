@@ -22,7 +22,7 @@ matrix:
       env: WP_VERSION=latest WP_MULTISITE=1
 
 before_install:
-- composer require phpunit/phpunit satooshi/php-coveralls
+- composer require phpunit/phpunit satooshi/php-coveralls:dev-master
 - composer install
 
 before_script:
