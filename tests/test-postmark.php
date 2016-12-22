@@ -14,7 +14,7 @@ class PostmarkTest extends \WP_UnitTestCase
 {
 
     /**
-     * @covers \PacketBoat\Postmark\PostMark::mailer
+     * @covers \PacketBoat\PostMark\PostMark::mailer
      */
     public function testMailer()
     {
