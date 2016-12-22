@@ -16,6 +16,7 @@ if (!class_exists('Postmark\PostmarkClient')) {
     require_once(dirname(__FILE__) . '/vendor/autoload.php');
 }
 
+// Backwards compatibility with development version.
 if (!defined('POSTMARK_SERVER_TOKEN') && defined('POSTMARK_API_KEY')) {
     define('POSTMARK_SERVER_TOKEN', POSTMARK_API_KEY);
 }
@@ -25,10 +26,20 @@ if (!defined('POSTMARK_SENDER_SIGNATURE') && defined('POSTMARK_SENDER_ADDRESS'))
 }
 
 if (! function_exists('wp_mail')) {
-    if (defined('POSTMARK_SERVER_TOKEN') && defined('POSTMARK_SENDER_SIGNATURE')) {
+    if (defined('MAILGUN_API_KEY') && defined('MAILGUN_DOMAIN_NAME')) {
+        function wp_mail($to, $subject, $message, $headers = '', $attachments = [])
+        {
+            return \PacketBoat\Mailgun\dispatch($to, $subject, $message, $headers, $attachments);
+        }
+    } elseif (defined('POSTMARK_SERVER_TOKEN') && defined('POSTMARK_SENDER_SIGNATURE')) {
         function wp_mail($to, $subject, $message, $headers = '', $attachments = [])
         {
             return \PacketBoat\Postmark\dispatch($to, $subject, $message, $headers, $attachments);
+        }
+    } elseif (defined('SENDGRID_API_KEY')) {
+        function wp_mail($to, $subject, $message, $headers = '', $attachments = [])
+        {
+            return \PacketBoat\SendGrid\dispatch($to, $subject, $message, $headers, $attachments);
         }
     }
 }
