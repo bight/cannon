@@ -12,6 +12,10 @@
  * @package         PacketBoat
  */
 
+if (!class_exists('Postmark\PostmarkClient')) {
+    require_once(dirname(__FILE__) . '/vendor/autoload.php');
+}
+
 if (!defined('POSTMARK_SERVER_TOKEN') && defined('POSTMARK_API_KEY')) {
     define('POSTMARK_SERVER_TOKEN', POSTMARK_API_KEY);
 }
@@ -19,8 +23,6 @@ if (!defined('POSTMARK_SERVER_TOKEN') && defined('POSTMARK_API_KEY')) {
 if (!defined('POSTMARK_SENDER_SIGNATURE') && defined('POSTMARK_SENDER_ADDRESS')) {
     define('POSTMARK_SENDER_SIGNATURE', POSTMARK_SENDER_ADDRESS);
 }
-
-require_once('vendor/autoload.php');
 
 if (! function_exists('wp_mail')) {
     if (defined('POSTMARK_SERVER_TOKEN') && defined('POSTMARK_SENDER_SIGNATURE')) {
