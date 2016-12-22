@@ -6,7 +6,8 @@
         "wildbit/postmark-php": "^2.2"
     },
     "require-dev": {
-        "squizlabs/PHP_CodeSniffer": "^2.7"
+        "squizlabs/PHP_CodeSniffer": "^2.7",
+        "phpunit/phpunit": "^5.7"
     },
     "autoload": {
          "files": ["src/Postmark.php"]

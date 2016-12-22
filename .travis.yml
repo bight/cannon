@@ -12,24 +12,19 @@ branches:
 php:
   - 5.6
   - 7.0
+  - 7.1
 
 env:
   - WP_VERSION=latest WP_MULTISITE=0
 
-matrix:
-  include:
-    - php: 5.6
-      env: WP_VERSION=latest WP_MULTISITE=1
-
 before_install:
-- composer require phpunit/phpunit:4.8.* satooshi/php-coveralls:dev-master
 - composer install
 
 before_script:
   - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
 
 script:
-- "./vendor/bin/phpunit --configuration phpunit.xml --coverage-clover ./tests/logs/clover.xml"
+- "./vendor/bin/phpunit --configuration phpunit.xml --coverage-clover=coverage.xml"
 
-after_script:
-- php vendor/bin/coveralls -v
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

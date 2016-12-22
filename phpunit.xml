@@ -13,7 +13,7 @@
 	</testsuites>
 	<filter>
 		<whitelist>
-			<directory suffix=".php">./includes</directory>
+			<directory suffix=".php">./src</directory>
 			<exclude>
 				<directory suffix=".php">./tests</directory>
 			</exclude>
