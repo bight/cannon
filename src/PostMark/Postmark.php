@@ -3,7 +3,7 @@
 use Postmark\PostmarkClient;
 use Postmark\Models\PostmarkAttachment;
 
-class PostMark
+class Postmark
 {
     /**
      * Override \wp_mail() to use the Postmark API

@@ -1,5 +1,7 @@
 <?php
-namespace PacketBoat;
+namespace PacketBoat\Tests;
+
+use PacketBoat\Postmark\Postmark;
 
 /**
  * Class PostmarkTest
