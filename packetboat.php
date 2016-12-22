@@ -18,7 +18,7 @@ if (! function_exists('wp_mail')) {
     if (defined('POSTMARK_API_KEY') && defined('POSTMARK_SENDER_ADDRESS')) {
         function wp_mail($to, $subject, $message, $headers = '', $attachments = [])
         {
-            return \PacketBoat\Postmark\Postmark::mailer($to, $subject, $message, $headers, $attachments);
+            return \PacketBoat\Postmark\dispatch($to, $subject, $message, $headers, $attachments);
         }
     }
 }

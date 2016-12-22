@@ -10,13 +10,13 @@
         "phpunit/phpunit": "^5.7"
     },
     "autoload": {
-        "psr-4": {
-            "PacketBoat\\": "src/"
-        }
+        "files": ["src/Postmark.php"]
     },
     "scripts": {
+       "standards": ["vendor/bin/phpcs --standard=phpcs.xml"],
        "test": [
-         "vendor/bin/phpcs"
+         "vendor/bin/phpunit --configuration phpunit.xml --coverage-clover=coverage.xml",
+         "vendor/bin/phpcs --standard=phpcs.xml --extensions=php ."
        ]
      },
     "license": "MIT",

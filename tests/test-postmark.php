@@ -1,8 +1,6 @@
 <?php
 namespace PacketBoat\Tests;
 
-use PacketBoat\Postmark\Postmark;
-
 /**
  * Class PostmarkTest
  *
@@ -12,15 +10,15 @@ class PostmarkTest extends \WP_UnitTestCase
 {
 
     /**
-     * @covers \PacketBoat\Postmark\Postmark::mailer
+     * @covers \PacketBoat\Postmark\dispatch
      */
-    public function testMailer()
+    public function testDispatch()
     {
         define('POSTMARK_SENDER_ADDRESS', 'foo@bar.com');
         define('POSTMARK_API_KEY', 'POSTMARK_API_TEST');
 
         // Test with valid API key.
-        $result = wp_mail('foo@bar.com', 'Test Message', 'Test message body.');
+        $result = \PacketBoat\Postmark\dispatch('foo@bar.com', 'Test Message', 'Test message body.');
         $this->assertTrue($result);
     }
 }
