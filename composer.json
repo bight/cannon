@@ -3,10 +3,19 @@
     "description": "A service-agnostic vehicle for WordPress transactional email.",
     "type": "wordpress-plugin",
     "require": {
-        "mailgun/mailgun-php": "^2.1",
-        "sendgrid/sendgrid": "^5.0",
         "wildbit/postmark-php": "^2.2"
     },
+    "require-dev": {
+        "squizlabs/PHP_CodeSniffer": "^2.7"
+    },
+    "autoload": {
+         "files": ["src/Postmark.php"]
+    },
+    "scripts": {
+       "test": [
+         "vendor/bin/phpcs"
+       ]
+     },
     "license": "MIT",
     "authors": [
         {

@@ -12,4 +12,13 @@
  * @package         PacketBoat
  */
 
-namespace PacketBoat;
+require_once('vendor/autoload.php');
+
+if (! function_exists('wp_mail')) {
+    if (defined('POSTMARK_API_KEY') && defined('POSTMARK_SENDER_ADDRESS')) {
+        function wp_mail($to, $subject, $message, $headers = '', $attachments = [])
+        {
+            return \PacketBoat\Postmark\wp_mail($to, $subject, $message, $headers, $attachments);
+        }
+    }
+}
