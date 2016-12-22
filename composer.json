@@ -19,6 +19,9 @@
          "vendor/bin/phpcs --standard=phpcs.xml --extensions=php ."
        ]
      },
+     "archive": {
+       "exclude": ["/bin", "tests", ".editorconfig", ".gitattributes", ".gitignore", ".travis.yml", "phpcs.xml", "phpunit.xml"]
+     },
     "license": "MIT",
     "authors": [
         {
