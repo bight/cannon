@@ -14,8 +14,8 @@ A service-agnostic vehicle for WordPress transactional email.
 And one of the following services:
 
 * [Postmark](https://postmarkapp.com)
-* [Mailgun](https://mailgun.com) (COMING SOON)
-* [Sendgrid](https://sendgrid.com) (COMING SOON)
+* [Mailgun](https://mailgun.com) (coming soon)
+* [Sendgrid](https://sendgrid.com) (coming soon)
 
 ## Installation
 

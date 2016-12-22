@@ -4,7 +4,7 @@ use Postmark\PostmarkClient;
 use Postmark\Models\PostmarkAttachment;
 
 /**
- * Override \wp_mail() to use the Postmark API
+ * Override \wp_mail() to use the Postmark API. Based on original code by Pressbooks (https://github.com/pressbooks/pressbooks/), used under a GPL 2.0 license.
  *
  * @param string|array $to Array or comma-separated list of email addresses to send message.
  * @param string $subject Email subject.
