@@ -1,14 +1,12 @@
 <?php
+namespace PacketBoat;
+
 /**
  * Class PostmarkTest
  *
  * @package Packetboat
  */
-
-/**
- * Test Postmark mailer.
- */
-class PostmarkTest extends WP_UnitTestCase
+class PostmarkTest extends \WP_UnitTestCase
 {
 
     /**
@@ -17,11 +15,6 @@ class PostmarkTest extends WP_UnitTestCase
     public function testMailer()
     {
         define('POSTMARK_SENDER_ADDRESS', 'foo@bar.com');
-
-        // Test with missing API key.
-        $result = wp_mail('foo@bar.com', 'Test Message', 'Test message body.');
-        $this->assertEquals(false, $result);
-
         define('POSTMARK_API_KEY', 'POSTMARK_API_TEST');
 
         // Test with valid API key.
