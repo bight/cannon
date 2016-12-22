@@ -5,12 +5,10 @@
  * @package Packetboat
  */
 
-namespace PacketBoat;
-
 /**
  * Test Postmark mailer.
  */
-class PostmarkTest extends \WP_UnitTestCase
+class PostmarkTest extends WP_UnitTestCase
 {
 
     /**
