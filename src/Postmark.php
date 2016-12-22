@@ -12,15 +12,15 @@ use Postmark\Models\PostmarkAttachment;
  * @param string|array $headers Optional. Additional headers.
  * @param string|array $attachments Optional. Files to attach.
  *
- * @const POSTMARK_API_KEY
- * @const POSTMARK_SENDER_ADDRESS
+ * @const POSTMARK_SERVER_TOKEN See http://developer.postmarkapp.com/developer-api-overview.html#authentication
+ * @const POSTMARK_SENDER_SIGNATURE See https://account.postmarkapp.com/signatures
  *
  * @return bool Whether the email contents were sent successfully.
  */
 
 function dispatch($to, $subject, $message, $headers = '', $attachments = array())
 {
-    $client = new PostmarkClient(POSTMARK_API_KEY);
+    $client = new PostmarkClient(POSTMARK_SERVER_TOKEN);
 
     if (! is_array($to)) {
         $recipients = explode(',', $to);
@@ -40,7 +40,7 @@ function dispatch($to, $subject, $message, $headers = '', $attachments = array()
     foreach ($recipients as $recipient) {
         $email = [];
         $email['To'] = $recipient;
-        $email['From'] = POSTMARK_SENDER_ADDRESS;
+        $email['From'] = POSTMARK_SENDER_SIGNATURE;
         $email['Subject'] = $subject;
         $email['TextBody'] = $message;
 
