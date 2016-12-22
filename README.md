@@ -2,6 +2,6 @@
 
 [![Build Status](https://travis-ci.org/bight/packetboat.svg?branch=development)](https://travis-ci.org/bight/packetboat
 )
-[![Coverage Status](https://coveralls.io/repos/github/bight/packetboat/badge.svg?branch=development)](https://coveralls.io/github/bight/packetboat?branch=development)
+[![Coverage Status](https://codecov.io/gh/bight/packetboat/branch/development/graph/badge.svg)](https://codecov.io/gh/bight/packetboat)
 
 A service-agnostic vehicle for WordPress transactional email.
